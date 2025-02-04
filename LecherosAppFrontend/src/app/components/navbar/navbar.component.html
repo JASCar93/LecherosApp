@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <a [routerLink]="'/'">
+    <mat-icon>menu_books</mat-icon>
+    </a>
+    <span>Sistema ErLechero</span>
+    <span class="registrar-spacer"></span>
+    <a 
+        [routerLink]="'/listUsuario'"
+        mat-icon-button
+        class="example-icon favorite-icon mr20 ml70"
+        aria-label="Example icon-button with heart icon"
+    >
+    Usuarios
+    </a>
+    <a 
+        [routerLink]="'/registrar'"
+        mat-icon-button
+        class="example-icon favorite-icon mr20 ml70"
+        aria-label="Example icon-button with heart icon"
+    >
+    Registrar
+    </a>
+</mat-toolbar>
