@@ -21,13 +21,21 @@ import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import {MatSortModule} from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { TicketComponent } from './pages/ticket/ticket.component';
+import { AddTicketComponent } from './pages/add-ticket/add-ticket.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
+import { SidebarComponent } from './components/sidebar/sidebar.component'; 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegistrarComponent,
     HomeComponent,
-    ListUsuarioComponent
+    ListUsuarioComponent,
+    TicketComponent,
+    AddTicketComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +54,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatInputModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatGridListModule,
+    MatButtonModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

@@ -6,5 +6,12 @@
 </ngx-ui-loader>
 <div ngxUiLoaderBlurred (blur) = "10">
   <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
+  <div class="row">
+    <div class="column left">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="column right">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

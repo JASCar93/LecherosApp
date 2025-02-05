@@ -30,7 +30,7 @@ export class ListUsuarioComponent implements AfterViewInit {
       },
       (error) => {
         console.log(error);
-        Swal.fire('Error !!','Error al cargar las categorías','error');
+        Swal.fire('Error !!','Error al cargar los usuarios','error');
       }
     )
   }

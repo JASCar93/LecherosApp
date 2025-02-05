@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegistrarComponent } from './pages/registrar/registrar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListUsuarioComponent } from './pages/list-usuario/list-usuario.component';
+import { TicketComponent } from './pages/ticket/ticket.component';
+import { AddTicketComponent } from './pages/add-ticket/add-ticket.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,16 @@ const routes: Routes = [
   {
     path:'registrar',
     component:RegistrarComponent,
+    pathMatch:'full'
+  },
+  {
+    path: 'ticket',
+    component:TicketComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'add-ticket',
+    component:AddTicketComponent,
     pathMatch:'full'
   }
 ];

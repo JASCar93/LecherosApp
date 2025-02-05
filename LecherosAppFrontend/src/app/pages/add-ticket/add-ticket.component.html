@@ -1,0 +1,77 @@
+<mat-card style="margin-left: 10px;">
+    <h1>Agregar nuevo ticket</h1>
+    <mat-form-field class="w100" appearance="outline">
+        <mat-label>Rutero</mat-label>
+        <input matInput type="Rutero" name="Rutero" required placeholder="Rutero">
+    </mat-form-field>
+<mat-card>
+    <mat-grid-list cols="2" rowHeight="80px">
+        <mat-grid-tile>
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>ID. Ticket</mat-label>
+                <input matInput type="ID-Ticket" name="ID-Ticket" required placeholder="ID. Ticket">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Gasolina</mat-label>
+                <input matInput type="Gasolina" name="Gasolina" required placeholder="Gasolina">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Monto</mat-label>
+                <input matInput type="Monto" name="Monto" required placeholder="Monto">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Precio</mat-label>
+                <input matInput type="Precio" name="Precio" required placeholder="Precio">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Descuento</mat-label>
+                <input matInput type="Descuento" name="Descuento" required placeholder="Descuento">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Tasa BCV</mat-label>
+                <input matInput type="Tasa BCV" name="Tasa BCV" required placeholder="Tasa BCV">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="2" style="height: 100px;">
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Total</mat-label>
+                <input matInput type="Total" name="Total" required placeholder="Total">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Vol. Lunes</mat-label>
+                        <input matInput type="Vol. Lunes" name="Vol. Lunes" required placeholder="Vol. Lunes">
+                    </mat-form-field>
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Vol. Martes</mat-label>
+                        <input matInput type="Vol. Martes" name="Vol. Martes" required placeholder="Vol. Martes">
+                    </mat-form-field>
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Vol. Miercoles</mat-label>
+                        <input matInput type="Vol. Miercoles" name="Vol. Miercoles" required placeholder="Vol. Miercoles">
+                    </mat-form-field>
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Vol. Jueves</mat-label>
+                        <input matInput type="Vol. Jueves" name="Vol. Jueves" required placeholder="Vol. Jueves">
+                    </mat-form-field>
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Vol. Viernes</mat-label>
+                        <input matInput type="Vol. Viernes" name="Vol. Viernes" required placeholder="Vol. Viernes">
+                    </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile style="height: 100px;" colspan="2">
+            <button mat-stroked-button>Guardar</button>
+        </mat-grid-tile>
+    </mat-grid-list>
