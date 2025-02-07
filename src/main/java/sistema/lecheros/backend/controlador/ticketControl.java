@@ -36,8 +36,7 @@ public class ticketControl {
 
 	@PostMapping("/")
 	public ResponseEntity<Ticket> guardarTicket(@RequestBody Ticket ticket) {
-		Ticket ticketGuardado = ticketRepositorio.save(ticket);
-		return ResponseEntity.ok(ticketGuardado);
+		return ResponseEntity.ok(ticketRepositorio.save(ticket));
 	}
 		
 	@PutMapping("/")

@@ -12,7 +12,6 @@ import { error } from 'console';
   styleUrl: './registrar.component.css'
 })
 
-
 export class RegistrarComponent implements OnInit{
 
   usuario={
@@ -41,7 +40,7 @@ export class RegistrarComponent implements OnInit{
       },
       (error)=>{
         console.log(error);
-        Swal.fire('Error !!','Error al guardar la categoria','error')
+        Swal.fire('Error !!','Error al guardar el usuario','error')
       }
     )
   }

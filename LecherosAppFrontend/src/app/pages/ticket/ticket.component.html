@@ -1,1 +1,113 @@
-<p>este es el componente ticket</p>
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="ticket" matSort>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row">{{row.ticketId}}</td>
+    </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let row"> 
+          <span *ngIf="!row.editable; else editPlace">
+            {{row.usuario.nombre}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.nombre" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="monto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> monto </th>
+        <td mat-cell *matCellDef="let row">
+          <span *ngIf="!row.editable;else editPlace">
+            {{row.monto}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.monto" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gasolina">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> gasolina </th>
+        <td mat-cell *matCellDef="let row">
+          <span *ngIf="!row.editable;else editPlace">
+            {{row.gasolina}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.gasolina" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tasabcv">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> tasabcv </th>
+        <td mat-cell *matCellDef="let row">
+          <span *ngIf="!row.editable;else editPlace">
+            {{row.tasabcv}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.tasabcv" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descuento">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> descuento </th>
+        <td mat-cell *matCellDef="let row">
+          <span *ngIf="!row.editable;else editPlace">
+            {{row.descuento}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.descuento" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> total </th>
+        <td mat-cell *matCellDef="let row">
+          <span *ngIf="!row.editable;else editPlace">
+            {{row.total}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.total" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> precio </th>
+        <td mat-cell *matCellDef="let row">
+          <span *ngIf="!row.editable;else editPlace">
+            {{row.precio}}
+          </span>
+          <ng-template #editPlace>
+            <input matInput [(ngModel)]="row.precio" (keyup.enter)="actualizarTicket(row)">
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>actions</th>
+        <td mat-cell *matCellDef="let row" colspan="2">
+          <mat-icon fontIcon="edit" (click)="edit(row)"/>
+          <mat-icon fontIcon="delete" (click)="eliminarUsuario(row.id)"/>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="3">No data matching the filter "{{input.value}}"</td>
+      </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>

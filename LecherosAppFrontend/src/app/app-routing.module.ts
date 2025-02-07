@@ -28,7 +28,7 @@ const routes: Routes = [
     pathMatch:'full'
   },
   {
-    path:'add-ticket',
+    path:'add-ticket/:id/:nombre',
     component:AddTicketComponent,
     pathMatch:'full'
   }

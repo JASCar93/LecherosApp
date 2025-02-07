@@ -94,4 +94,3 @@ export class ListUsuarioComponent implements AfterViewInit {
 
   }
 }
-
