@@ -17,7 +17,7 @@
             {{row.usuario.nombre}}
           </span>
           <ng-template #editPlace>
-            <input matInput [(ngModel)]="row.nombre" (keyup.enter)="actualizarTicket(row)">
+            <input matInput [(ngModel)]="row.usuario.nombre" (keyup.enter)="actualizarTicket(row)">
           </ng-template>
         </td>
       </ng-container>

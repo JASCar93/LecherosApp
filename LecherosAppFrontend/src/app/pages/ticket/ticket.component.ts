@@ -15,16 +15,22 @@ import Swal from 'sweetalert2';
 })
 export class TicketComponent {
   displayedColumns: string[] = ['id','nombre', 'monto', 'gasolina', 'tasabcv', 'descuento', 'total', 'precio', "actions"];
-  ticket:any=[]
+  ticket:any=[];
   @ViewChild(MatPaginator) paginator: MatPaginator = new MatPaginator;
   @ViewChild(MatSort) sort: MatSort = new MatSort;
 
-  constructor(private ticketServicio:TicketService, private snack:MatSnackBar){}
+  constructor(private ticketServicio:TicketService, private snack:MatSnackBar){
+  }
 
   ngOnInit(): void {
     this.ticketServicio.listarTicket().subscribe(
       (dato:any) => {
         this.ticket = new MatTableDataSource(dato);
+
+        this.ticket.filterPredicate = (data: any, filter:string) => {
+          const dataStr =JSON.stringify(data).toLowerCase();
+          return dataStr.indexOf(filter) != -1; 
+        }
         this.ngAfterViewInit();
         console.log(this.ticket);
       },
@@ -33,6 +39,7 @@ export class TicketComponent {
         Swal.fire('Error !!','Error al cargar los usuarios','error');
       }
     )
+
   }
 
   ngAfterViewInit(): void {
@@ -43,7 +50,6 @@ export class TicketComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.ticket.filter = filterValue.trim().toLowerCase();
-
     if (this.ticket.paginator) {
       this.ticket.paginator.firstPage();
     }
@@ -67,6 +73,7 @@ export class TicketComponent {
       }
     )
   }
+  
   eliminarUsuario(ticketId:any){
     Swal.fire({
       title:'Eliminar Usuario',
